@@ -1,5 +1,20 @@
-from clientes.clientes import cadastrar_cliente, listar_clientes
+from services.persistencia_service import (
+    carregar_produtos,
+    carregar_clientes,
+    carregar_vendas
+)
 
 
-cadastrar_cliente()
-listar_clientes()
+def main():
+    print("Sistema de Vendas")
+
+    produtos = carregar_produtos()
+    clientes = carregar_clientes()
+    vendas = carregar_vendas()
+
+    for produto in produtos:
+        print(produto)
+
+
+if __name__ == "__main__":
+    main()
