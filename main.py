@@ -4,7 +4,7 @@ from services.persistencia_service import (
     carregar_vendas
 )
 
-from services.estoque_service import listar_produtos
+from services.estoque_service import listar_produtos, buscar_produto
 
 
 def main():
@@ -14,7 +14,10 @@ def main():
     clientes = carregar_clientes()
     vendas = carregar_vendas()
 
-    produtos = listar_produtos(produtos)
+    produto = buscar_produto(produtos, 1)
+
+    if produto:
+        print("Produto encontrado:", produto)
 
     for produto in produtos:
         print(produto)
