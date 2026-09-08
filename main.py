@@ -4,6 +4,8 @@ from services.persistencia_service import (
     carregar_vendas
 )
 
+from services.estoque_service import listar_produtos
+
 
 def main():
     print("Sistema de Vendas")
@@ -11,6 +13,8 @@ def main():
     produtos = carregar_produtos()
     clientes = carregar_clientes()
     vendas = carregar_vendas()
+
+    produtos = listar_produtos(produtos)
 
     for produto in produtos:
         print(produto)
