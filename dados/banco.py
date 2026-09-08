@@ -1,4 +1,0 @@
-clientes = []
-produtos = []
-vendas = []
-historico = []
