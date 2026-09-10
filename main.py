@@ -51,13 +51,19 @@ def main():
     itens = []
 
     while True:
-        codigo_produto = int(
-            input("Digite o código do produto que deseja comprar: ")
-        )
 
-        quantidade = int(
-            input("Digite a quantidade que deseja comprar: ")
-        )
+        try:
+            codigo_produto = int(
+                input("Digite o código do produto que deseja comprar: ")
+            )
+
+            quantidade = int(
+                input("Digite a quantidade que deseja comprar: ")
+            )
+
+        except ValueError:
+            print("Digite apenas números.")
+            continue
 
         produto = buscar_produto(produtos, codigo_produto)
 
